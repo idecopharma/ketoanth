@@ -67,7 +67,7 @@
                 <input type="date" id="creationDate" class="mt-1 block w-full rounded-md shadow-sm">
             </div>
         </div>
-        <h2 class="text-2xl font-semibold mb-4 text-gray-800">KPI QUẢN LÝ  NGHIỆP VỤ CỘNG VIỆC TRONG KỲ GIAO ( 40%)  </h2>
+        <h2 class="text-2xl font-semibold mb-4 text-gray-800">KPI QUẢN LÝ  NGHIỆP VỤ CỘNG VIỆC TRONG KỲ GIAO ( 10%)  </h2>
         <div class="table-container mb-8 rounded-lg border border-gray-200">
             <table id="kpiTable" class="min-w-full">
                 <thead>
@@ -87,7 +87,7 @@
 
         <!-- BẢNG 2 TĨNH -->
         <div class="bg-white mt-12 mb-8 p-6 rounded-lg border border-indigo-300 shadow-md">
-            <h2 class="text-2xl font-bold text-indigo-700 mb-6">KPI CÁC CHỈ SỐ DOANH THU - LỢI NHUẬN </h2>
+            <h2 class="text-2xl font-bold text-indigo-700 mb-6">A. KIỂM SOÁT & CHẤT LƯỢNG HỆ THỐNG (%)</h2>
             <div class="table-container rounded-lg border border-gray-200 mb-6">
                 <table id="kpiTable2" class="min-w-full">
                     <thead>
@@ -101,34 +101,29 @@
                     </thead>
                     <tbody>
                        <tr>
-                            <td> <b style="color: red;">1 Doanh thu thuốc tổng toàn công ty tối thiểu 1,600,000đồng.</b></td>
-                            <td>Đạt từ 100%</td>
+                            <td> <b style="color: red;">1 Sai sót hệ thống quản lý trong bộ phận kế toán kho vận quản lý chung.</b></td>
+                            <td>Lỗi sai sót không vượt quá 3 lỗi/ tháng</td>
                             <td style="color:red; font-weight:bold;"class="kpi2-score">10% </td>
                             <td><input class="kpi2-evaluation w-full border rounded-md p-1 text-center" type="number" value="0"></td>
                             <td><textarea class="kpi2-report w-full border rounded-md p-1" rows="1">Em tự đánh giá</textarea></td>
                         </tr>
                         <tr>
-                            <td> 2 Tỉ lệ lợi nhuận thuần/doanh Thu thuần trong kỳ (xét kỳ trước).</td>
-                            <td>Đạt từ 5%</td>
-                            <td class="kpi2-score">10%</td>
+                            <td> 2 Tỉ lệ Sai lệ dữ liệu hệ thống ERP -MISA - thiếu đồng bộ chung.</td>
+                            <td>Nhò hơn 5 lỗi/ kỳ đánh giá </td>
+                            <td class="kpi2-score">15%</td>
                             <td><input class="kpi2-evaluation w-full border rounded-md p-1 text-center" type="number" value="0"></td>
                             <td><textarea class="kpi2-report w-full border rounded-md p-1" rows="1">Em tự đánh giá</textarea></td>
                         </tr>
                        
 						 <tr>
-                            <td> <b style="color: red;">3 Tỉ lệ lợi nhuận thuần/doanh Thu thuần trong kỳ (xét kỳ trước).</b></td>
-                            <td>Đạt từ 10%%</td>
-                            <td style="color:red; font-weight:bold;"class="kpi2-score">15%</td>
+                            <td> <b style="color: red;">3. Kiểm soát chi phí lợi nhuận kế toán </b></td>
+                            <td>Mức lợi nhuận kế toán tối thiểu > 3%</td>
+                            <td style="color:red; font-weight:bold;"class="kpi2-score">10%</td>
                             <td><input class="kpi2-evaluation w-full border rounded-md p-1 text-center" type="number" value="0"></td>
                             <td><textarea class="kpi2-report w-full border rounded-md p-1" rows="1">Em tự đánh giá</textarea></td>
                         </tr>
 						 <tr>
-                            <td> <b style="color: red;">4. Tỉ lệ lợi nhuận thuần/doanh Thu thuần trong kỳ (xét kỳ trước).</b></td>
-                            <td>Đạt từ 15%</td>
-                            <td style="color:red; font-weight:bold;"class="kpi2-score">25%</td>
-                            <td><input class="kpi2-evaluation w-full border rounded-md p-1 text-center" type="number" value="0"></td>
-                            <td><textarea class="kpi2-report w-full border rounded-md p-1" rows="1">Em tự đánh giá</textarea></td>
-                        </tr>
+                       
 				  
 		  		 				 
 				   
@@ -145,7 +140,7 @@
         <!-- END BẢNG 2 -->
         <!-- BẢNG 3 TĨNH -->
         <div class="bg-white mt-12 mb-8 p-6 rounded-lg border border-green-300 shadow-md">
-            <h2 class="text-2xl font-bold text-green-700 mb-6">KPI QUẢN LÝ CHI PHÍ BÁN HÀNG ( GỒM CẢ CHI PHÍ VẬN CHUYỂN) </h2>
+            <h2 class="text-2xl font-bold text-green-700 mb-6">B. QUẢN TRỊ RỦI RO & TUÂN THỦ  </h2>
             <div class="table-container rounded-lg border border-gray-200 mb-6">
                 <table id="kpiTable3" class="min-w-full">
                     <thead>
@@ -159,15 +154,15 @@
                     </thead>
                     <tbody>
 						<tr>
-                           <td> 1 Tỉ lệ tổng chi phí bán hàng/doanh thu thuần kỳ này (A) so với kỳ trước (B) . </td>
-                             <td> Dưới 5%( A-B) </td>
-                            <td class="kpi2-score"> 5% </td>
+                           <td> 1 Tuân thủ pháp lý - quy định - chứng từ  . </td>
+                             <td> Không vi phạm </td>
+                            <td class="kpi2-score"> 10% </td>
                             <td><input class="kpi2-evaluation w-full border rounded-md p-1 text-center" type="number" value="0"></td>
                             <td><textarea class="kpi2-report w-full border rounded-md p-1" rows="1">Em tự đánh giá</textarea></td>
                         </tr>
                    <tr>
-                           <td> 2 Tỉ lệ tổng chi phí bán hàng/doanh thu thuần kỳ này (A) so với kỳ trước (B) . </td>
-                             <td> Dưới 2%( A-B) </td>
+                           <td> 2 Quản lý chứng từ mua bán : hóa đơn mua - bán xuất đáp ứng quy định kinh doanh - thu mua . </td>
+                             <td> Quản lý chứng từ đúng phát sinh trong ngày, trong kỳ không sai khi mua - bán khai báo </td>
                             <td  style="color:red; font-weight:bold;"class="kpi2-score"> 10% </td>
                             <td><input class="kpi2-evaluation w-full border rounded-md p-1 text-center" type="number" value="0"></td>
                             <td><textarea class="kpi2-report w-full border rounded-md p-1" rows="1">Em tự đánh giá</textarea></td>
@@ -202,21 +197,21 @@
                         
                     						
 						 <tr>
-                            <td><b style="color:green;">1 Hoàn thành quản lý- điều phối công việc bộ phận  thực hiện nhiệm vụ. </b></td>
+                            <td><b style="color:green;">1 Báo cáo đúng các tiên độ giao việc trong bộ phận kế toán - kho vận. </b></td>
                             <td>Hoàn thành trên 60%  nhiệm vụ kế toán- kho - điều phối nhập hàng</td>
-                            <td class="kpi4-score">5%</td>
+                            <td class="kpi4-score">10%</td>
                             <td><input class="kpi4-evaluation w-full border rounded-md p-1 text-center" type="number" value="0"></td>
                             <td><textarea class="kpi4-report w-full border rounded-md p-1" rows="1">Em tự đánh giá</textarea></td>
                         </tr
 						<tr>
-                            <td><b style="color:green;"> 2 Hoàn thành quản lý- điều phối công việc bộ phận  thực hiện nhiệm vụ. </b></td>
-                            <td>Hoàn thành trên 80% đầu mục nhiệm vụ kế toán- điều phối kho hàng </td>
+                            <td><b style="color:green;"> 2 Phân công giao việc - lập KPI bộ phẩn trước ngày 8 hàng tháng  </b></td>
+                            <td>Phân công - giao việc không chống chéo, xử lý nhiệm vụ hoàn thành giao đúng hạn. </td>
                             <td style="color:red; font-weight:bold;"class="kpi4-score">10%</td>
                             <td><input class="kpi4-evaluation w-full border rounded-md p-1 text-center" type="number" value="0"></td>
                             <td><textarea class="kpi4-report w-full border rounded-md p-1" rows="1">Em tự đánh giá</textarea></td>
                         </tr
 							<tr>
-                            <td><b style="color:green;"> 3 Các hoạt động bộ phận thực hiện nhiệm vụ theo quy dịnh  </b></td>
+                            <td><b style="color:green;"> 3 Đánh giá công tác phân tích- trình bày đề xuất quản lý phát sinh </b></td>
                             <td>Điều phối nhân viên- triển khai nhiệm vụ sai sót nhỏ hơn 3 hạn mục /kỳ</td>
                             <td class="kpi4-score">10%</td>
                             <td><input class="kpi4-evaluation w-full border rounded-md p-1 text-center" type="number" value="0"></td>
@@ -224,9 +219,9 @@
                         </tr				
 						 </tr
 							<tr>
-                            <td><b style="color:green;"> 4 Các hoạt động bộ phận thực hiện nhiệm vụ theo quy định </b></td>
+                            <td><b style="color:green;"> 4 Hoàn thành các báo cáo công tác thuế- tài chính trong kỳ giao </b></td>
                             <td>Điều phối nhân viên - triển khai nhiệm vụ sai sót nhỏ hơn 1 hạn mục trong kỳ</td>
-                            <td style="color:red; font-weight:bold;"class="kpi4-score">15%</td>
+                            <td style="color:red; font-weight:bold;"class="kpi4-score">10%</td>
                             <td><input class="kpi4-evaluation w-full border rounded-md p-1 text-center" type="number" value="0"></td>
                             <td><textarea class="kpi4-report w-full border rounded-md p-1" rows="1">Em tự đánh giá</textarea></td>
                         </tr					
@@ -719,7 +714,6 @@ document.getElementById('exportHtmlBtn').onclick = function() {
 </script>
 </body>
 </html>
-
 
 
 
