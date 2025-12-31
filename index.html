@@ -67,7 +67,7 @@
                 <input type="date" id="creationDate" class="mt-1 block w-full rounded-md shadow-sm">
             </div>
         </div>
-        <h2 class="text-2xl font-semibold mb-4 text-gray-800">KPI QUẢN LÝ  NGHIỆP VỤ CỘNG VIỆC TRONG KỲ GIAO ( 10%)  </h2>
+        <h2 class="text-2xl font-semibold mb-4 text-gray-800">KPI HOÀN THÀNH NHIỆM VỤ GIAO TRONG KỲ  ( 10%)  </h2>
         <div class="table-container mb-8 rounded-lg border border-gray-200">
             <table id="kpiTable" class="min-w-full">
                 <thead>
@@ -109,8 +109,8 @@
                         </tr>
                         <tr>
                             <td> 2 Tỉ lệ Sai lệ dữ liệu hệ thống ERP -MISA - thiếu đồng bộ chung.</td>
-                            <td>Nhò hơn 5 lỗi/ kỳ đánh giá </td>
-                            <td class="kpi2-score">15%</td>
+                            <td>Nhò hơn 4 lỗi/ kỳ đánh giá </td>
+                            <td class="kpi2-score">10%</td>
                             <td><input class="kpi2-evaluation w-full border rounded-md p-1 text-center" type="number" value="0"></td>
                             <td><textarea class="kpi2-report w-full border rounded-md p-1" rows="1">Em tự đánh giá</textarea></td>
                         </tr>
@@ -153,13 +153,7 @@
                         </tr>
                     </thead>
                     <tbody>
-						<tr>
-                           <td> 1 Tuân thủ pháp lý - quy định - chứng từ  . </td>
-                             <td> Không vi phạm </td>
-                            <td class="kpi2-score"> 10% </td>
-                            <td><input class="kpi2-evaluation w-full border rounded-md p-1 text-center" type="number" value="0"></td>
-                            <td><textarea class="kpi2-report w-full border rounded-md p-1" rows="1">Em tự đánh giá</textarea></td>
-                        </tr>
+						
                    <tr>
                            <td> 2 Quản lý chứng từ mua bán : hóa đơn mua - bán xuất đáp ứng quy định kinh doanh - thu mua . </td>
                              <td> Quản lý chứng từ đúng phát sinh trong ngày, trong kỳ không sai khi mua - bán khai báo </td>
@@ -167,7 +161,12 @@
                             <td><input class="kpi2-evaluation w-full border rounded-md p-1 text-center" type="number" value="0"></td>
                             <td><textarea class="kpi2-report w-full border rounded-md p-1" rows="1">Em tự đánh giá</textarea></td>
                         </tr>										
-					
+					  <td> 3 Quản lý thu - chi - công nợ . </td>
+                             <td> Số hóa đơn quá hạn thanh toán trên 20 ngày nhỏ 1 hóa đơn  </td>
+                            <td  style="color:red; font-weight:bold;"class="kpi2-score"> 20% </td>
+                            <td><input class="kpi2-evaluation w-full border rounded-md p-1 text-center" type="number" value="0"></td>
+                            <td><textarea class="kpi2-report w-full border rounded-md p-1" rows="1">Em tự đánh giá</textarea></td>
+                        </tr>	
 					</tbody>
                 </table>
             </div>
@@ -210,13 +209,7 @@
                             <td><input class="kpi4-evaluation w-full border rounded-md p-1 text-center" type="number" value="0"></td>
                             <td><textarea class="kpi4-report w-full border rounded-md p-1" rows="1">Em tự đánh giá</textarea></td>
                         </tr
-							<tr>
-                            <td><b style="color:green;"> 3 Đánh giá công tác phân tích- trình bày đề xuất quản lý phát sinh </b></td>
-                            <td>Điều phối nhân viên- triển khai nhiệm vụ sai sót nhỏ hơn 3 hạn mục /kỳ</td>
-                            <td class="kpi4-score">10%</td>
-                            <td><input class="kpi4-evaluation w-full border rounded-md p-1 text-center" type="number" value="0"></td>
-                            <td><textarea class="kpi4-report w-full border rounded-md p-1" rows="1">Em tự đánh giá</textarea></td>
-                        </tr				
+									
 						 </tr
 							<tr>
                             <td><b style="color:green;"> 4 Hoàn thành các báo cáo công tác thuế- tài chính trong kỳ giao </b></td>
@@ -714,6 +707,7 @@ document.getElementById('exportHtmlBtn').onclick = function() {
 </script>
 </body>
 </html>
+
 
 
 
