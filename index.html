@@ -309,6 +309,7 @@
 const firebaseConfig = {
     apiKey: "AIzaSyCzj8xzenAwNOPYLnA3H4im5_o0DLjvbRc",
     authDomain: "kpikt-7e91e.firebaseapp.com",
+    databaseURL: "https://kpikt-7e91e-default-rtdb.firebaseio.com",
     projectId: "kpikt-7e91e",
     storageBucket: "kpikt-7e91e.firebasestorage.app",
     messagingSenderId: "1047133958701",
@@ -516,7 +517,7 @@ function resetMainFormAndShow() {
     calcTotalEvaluationScore();
 }
 
-// --- LƯU DỮ LIỆU ---
+// --- LƯU DỮ LIỆU (SỬA LỖI: THÊM LƯU NỘI DUNG BÁO CÁO) ---
 function saveKpiData() {
     const creatorName = document.getElementById('creatorName').value.trim();
     const department = document.getElementById('department').value.trim();
@@ -543,10 +544,15 @@ function saveKpiData() {
         }
     });
     
-    // Thu thập dữ liệu các bảng tĩnh
+    // Thu thập dữ liệu các bảng tĩnh (ĐÁNH GIÁ ĐIỂM)
     const kpi2Evaluations = Array.from(document.querySelectorAll('#kpiTable2 .kpi2-evaluation')).map(el => el.value);
     const kpi3Evaluations = Array.from(document.querySelectorAll('#kpiTable3 .kpi3-evaluation')).map(el => el.value);
     const kpi4Evaluations = Array.from(document.querySelectorAll('#kpiTable4 .kpi4-evaluation')).map(el => el.value);
+    
+    // THÊM: Thu thập nội dung BÁO CÁO từ các bảng tĩnh
+    const kpi2Reports = Array.from(document.querySelectorAll('#kpiTable2 .kpi2-report')).map(el => el.value);
+    const kpi3Reports = Array.from(document.querySelectorAll('#kpiTable3 .kpi3-report')).map(el => el.value);
+    const kpi4Reports = Array.from(document.querySelectorAll('#kpiTable4 .kpi4-report')).map(el => el.value);
     
     // Lấy nội dung editors
     const kpi2Note = kpi2NoteEditor.root.innerHTML;
@@ -556,7 +562,7 @@ function saveKpiData() {
     // Tổng điểm
     const totalScore = calcTotalEvaluationScore();
     
-    // Tạo dữ liệu lưu
+    // Tạo dữ liệu lưu (THÊM kpi2Reports, kpi3Reports, kpi4Reports)
     let kpiData = {
         creatorName,
         department,
@@ -565,6 +571,9 @@ function saveKpiData() {
         kpi2Evaluations,
         kpi3Evaluations,
         kpi4Evaluations,
+        kpi2Reports, // THÊM DÒNG NÀY
+        kpi3Reports, // THÊM DÒNG NÀY
+        kpi4Reports, // THÊM DÒNG NÀY
         kpi2Note,
         kpi3Note,
         kpi4Note,
@@ -641,7 +650,7 @@ function displaySavedKpis() {
     });
 }
 
-// --- TẢI KPI VÀO FORM ---
+// --- TẢI KPI VÀO FORM (SỬA LỖI: THÊM KHÔI PHỤC NỘI DUNG BÁO CÁO) ---
 function loadKpiToForm(kpiId) {
     db.ref('kpiBoards_v2/' + kpiId).once('value', snap => {
         const kpi = snap.val();
@@ -658,24 +667,45 @@ function loadKpiToForm(kpiId) {
             (kpi.kpiRows || []).forEach(r => addKpiRow(r));
             if ((kpi.kpiRows || []).length === 0) addKpiRow();
             
-            // Điền bảng 2
+            // Điền bảng 2 - ĐÁNH GIÁ ĐIỂM
             if (kpi.kpi2Evaluations) {
                 document.querySelectorAll('#kpiTable2 .kpi2-evaluation').forEach((el, index) => {
-                    if (kpi.kpi2Evaluations[index]) el.value = kpi.kpi2Evaluations[index];
+                    if (kpi.kpi2Evaluations[index] !== undefined) el.value = kpi.kpi2Evaluations[index];
                 });
             }
             
-            // Điền bảng 3
+            // Điền bảng 3 - ĐÁNH GIÁ ĐIỂM
             if (kpi.kpi3Evaluations) {
                 document.querySelectorAll('#kpiTable3 .kpi3-evaluation').forEach((el, index) => {
-                    if (kpi.kpi3Evaluations[index]) el.value = kpi.kpi3Evaluations[index];
+                    if (kpi.kpi3Evaluations[index] !== undefined) el.value = kpi.kpi3Evaluations[index];
                 });
             }
             
-            // Điền bảng 4
+            // Điền bảng 4 - ĐÁNH GIÁ ĐIỂM
             if (kpi.kpi4Evaluations) {
                 document.querySelectorAll('#kpiTable4 .kpi4-evaluation').forEach((el, index) => {
-                    if (kpi.kpi4Evaluations[index]) el.value = kpi.kpi4Evaluations[index];
+                    if (kpi.kpi4Evaluations[index] !== undefined) el.value = kpi.kpi4Evaluations[index];
+                });
+            }
+            
+            // THÊM: Điền bảng 2 - BÁO CÁO
+            if (kpi.kpi2Reports) {
+                document.querySelectorAll('#kpiTable2 .kpi2-report').forEach((el, index) => {
+                    if (kpi.kpi2Reports[index] !== undefined) el.value = kpi.kpi2Reports[index];
+                });
+            }
+            
+            // THÊM: Điền bảng 3 - BÁO CÁO
+            if (kpi.kpi3Reports) {
+                document.querySelectorAll('#kpiTable3 .kpi3-report').forEach((el, index) => {
+                    if (kpi.kpi3Reports[index] !== undefined) el.value = kpi.kpi3Reports[index];
+                });
+            }
+            
+            // THÊM: Điền bảng 4 - BÁO CÁO
+            if (kpi.kpi4Reports) {
+                document.querySelectorAll('#kpiTable4 .kpi4-report').forEach((el, index) => {
+                    if (kpi.kpi4Reports[index] !== undefined) el.value = kpi.kpi4Reports[index];
                 });
             }
             
@@ -751,6 +781,14 @@ document.getElementById('exportHtmlBtn').onclick = function() {
         return;
     }
     
+    // Thu thập dữ liệu báo cáo
+    const reports = [];
+    document.querySelectorAll('.kpi2-report, .kpi3-report, .kpi4-report').forEach((textarea, index) => {
+        if (textarea.value && textarea.value !== 'Em tự đánh giá') {
+            reports.push(`Báo cáo ${index + 1}: ${textarea.value}`);
+        }
+    });
+    
     // Tạo nội dung HTML tĩnh
     const htmlContent = `
 <!DOCTYPE html>
@@ -766,6 +804,7 @@ document.getElementById('exportHtmlBtn').onclick = function() {
         th { background-color: #4f46e5; color: white; }
         .header-info { background: #f5f3ff; padding: 20px; border-radius: 10px; margin-bottom: 30px; }
         .total-score { background: #667eea; color: white; padding: 20px; border-radius: 10px; text-align: center; margin: 30px 0; }
+        .report-section { background: #f0f9ff; padding: 15px; border-radius: 8px; margin: 15px 0; }
     </style>
 </head>
 <body>
@@ -778,10 +817,18 @@ document.getElementById('exportHtmlBtn').onclick = function() {
     </div>
     
     <div class="total-score">
-        <h2>TỔNG ĐIỂM KPI: <span id="totalScore">${calcTotalEvaluationScore()}</span></h2>
+        <h2>TỔNG ĐIỂM KPI: ${calcTotalEvaluationScore()}</h2>
     </div>
     
-    <!-- Nội dung KPI sẽ được thêm ở đây -->
+    ${reports.length > 0 ? `
+    <div class="report-section">
+        <h3>CÁC BÁO CÁO:</h3>
+        <ul>
+            ${reports.map(report => `<li>${report}</li>`).join('')}
+        </ul>
+    </div>
+    ` : ''}
+    
     <p><em>Đây là file KPI đã xuất từ hệ thống.</em></p>
 </body>
 </html>`;
@@ -818,5 +865,3 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
-
-
